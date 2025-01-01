@@ -20,7 +20,7 @@ struct AppInfo {
     }
     
     var apiKey : String {
-        return readFromInfoPlist(withKey: "API_KEY") ?? ""
+        return readFromInfoPlist(withKey: "APIKey") ?? ""
     }
     
     // MARK: - Private stuff

@@ -44,6 +44,11 @@ struct WeatherResponse: Decodable {
 struct Coordinates: Decodable {
     let lon: Double
     let lat: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case lon
+        case lat
+    }
 }
 
 struct Weather: Decodable {
@@ -51,6 +56,13 @@ struct Weather: Decodable {
     let main: String
     let description: String
     let icon: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case main
+        case description
+        case icon
+    }
 }
 
 struct MainWeatherData: Decodable {
@@ -60,16 +72,35 @@ struct MainWeatherData: Decodable {
     let tempMax: Double
     let pressure: Int
     let humidity: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case temp
+        case feelsLike = "feels_like"
+        case tempMin = "temp_min"
+        case tempMax = "temp_max"
+        case pressure
+        case humidity
+    }
 }
 
 struct Wind: Decodable {
     let speed: Double
     let deg: Int
     let gust: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case speed
+        case deg
+        case gust
+    }
 }
 
 struct Clouds: Decodable {
     let all: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case all
+    }
 }
 
 struct SystemData: Decodable {
@@ -78,4 +109,12 @@ struct SystemData: Decodable {
     let country: String
     let sunrise: Int
     let sunset: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case type
+        case id
+        case country
+        case sunrise
+        case sunset
+    }
 }
