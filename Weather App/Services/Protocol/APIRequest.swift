@@ -9,7 +9,7 @@ import Combine
 
 
 protocol APIRequest {
-    associatedtype RequestModel: Decodable
+    associatedtype ResponseType: Decodable
     
     var path: String { get }
     var method: String { get }
@@ -19,18 +19,13 @@ protocol APIRequest {
 }
 
 extension APIRequest {
-    func buildRequest(baseURL: String) throws -> URLRequest {
-        
-        guard let url = URL(string: baseURL + path) else {
-            throw APIServiceError.invalidURL
-        }
-        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
-        components.queryItems = queryItems
-        
-        var request = URLRequest(url: components.url!)
-        request.httpMethod = method
-        request.allHTTPHeaderFields = headers
-        request.httpBody = try body()
-        return request
+    
+    var session: URLSession {
+        URLSession.shared
     }
+    
+    var backgroundQueue: DispatchQueue {
+        DispatchQueue.global(qos: .background)
+    }
+    
 }

@@ -6,10 +6,15 @@
 //
 
 import Foundation
+import CoreLocation
 
 extension WeatherView {
     
     class WeatherViewViewModel: ObservableObject {
+        
+        @Published var isLoading = false
+        
+        var location: CLLocationCoordinate2D?
         
     }
 }
