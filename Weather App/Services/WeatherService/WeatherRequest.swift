@@ -27,7 +27,7 @@ struct WeatherRequest: APIRequest {
         return [
             URLQueryItem(name: "lat", value: "\(latitude)"),
             URLQueryItem(name: "lon", value: "\(longitude)"),
-            URLQueryItem(name: "appid", value: "YOUR_API_KEY"),
+            URLQueryItem(name: "appid", value: AppInfo().apiKey),
             URLQueryItem(name: "units", value: "metric")
         ]
     }

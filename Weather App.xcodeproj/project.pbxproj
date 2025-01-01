@@ -29,22 +29,9 @@
 		3FA32CAF2CDF9FDA0088F139 /* Weather AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Weather AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3FA29AF02D258A3D00B681EB /* Exceptions for "Weather App" folder in "Weather App" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Weather-App-Info.plist",
-			);
-			target = 3FA32C942CDF9FD80088F139 /* Weather App */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3FA32C972CDF9FD80088F139 /* Weather App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				3FA29AF02D258A3D00B681EB /* Exceptions for "Weather App" folder in "Weather App" target */,
-			);
 			path = "Weather App";
 			sourceTree = "<group>";
 		};
