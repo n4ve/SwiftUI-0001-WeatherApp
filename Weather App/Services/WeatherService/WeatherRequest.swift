@@ -10,18 +10,32 @@ import Foundation
 struct WeatherRequest: APIRequest {
     typealias ResponseType = WeatherResponse
     
-    var path: String
+    var latitude: Double
+    var longitude: Double
     
-    var method: String
+    var path: String {
+        "/data/2.5/weather"
+    }
+    
+    var method: String {
+        return "GET"
+    }
     
     var headers: [String : String]?
     
-    var queryItems: [URLQueryItem]?
+    var queryItems: [URLQueryItem]? {
+        return [
+            URLQueryItem(name: "lat", value: "\(latitude)"),
+            URLQueryItem(name: "lon", value: "\(longitude)"),
+            URLQueryItem(name: "appid", value: "YOUR_API_KEY"),
+            URLQueryItem(name: "units", value: "metric")
+        ]
+    }
     
     func body() throws -> Data? {
         nil
     }
     
-
+    
 }
 
