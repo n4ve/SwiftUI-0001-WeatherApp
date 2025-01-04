@@ -50,6 +50,8 @@ extension APIService {
             // Construct the URLRequest
             let urlRequest = try createURLRequest(for: request)
             
+            print(urlRequest)
+            
             return session.dataTaskPublisher(for: urlRequest)
                 .retry(1)
                 .tryMap { result in

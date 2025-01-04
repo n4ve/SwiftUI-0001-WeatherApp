@@ -66,12 +66,12 @@ struct Weather: Decodable {
 }
 
 struct MainWeatherData: Decodable {
-    let temp: Double
-    let feelsLike: Double
-    let tempMin: Double
-    let tempMax: Double
-    let pressure: Int
-    let humidity: Int
+    let temp: Double?
+    let feelsLike: Double?
+    let tempMin: Double?
+    let tempMax: Double?
+    let pressure: Double?
+    let humidity: Double?
     
     enum CodingKeys: String, CodingKey {
         case temp
@@ -84,9 +84,9 @@ struct MainWeatherData: Decodable {
 }
 
 struct Wind: Decodable {
-    let speed: Double
-    let deg: Int
-    let gust: Double
+    let speed: Double?
+    let deg: Int?
+    let gust: Double?
     
     enum CodingKeys: String, CodingKey {
         case speed
